@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import PageHeaderContent from "../../components/pageHeadcontent";
 import { FaFolderOpen } from "react-icons/fa";
-
 import "./styles.scss";
 
+// ✅ Make sure image is in: public/images/image1.jpg
 const portfolioData = [
   {
     id: 1,
     name: "Personal Portfolio Website",
-    image: "/images/image1.jpg",  // use public folder path here
-    link: "https://yourportfolio.com",
-    category: 2,
+    image: process.env.PUBLIC_URL + "/images/image1.jpg", // public folder path
+    link: "https://anjalidevireddy.github.io/",
+    category: 1,
   },
   // more projects...
 ];
@@ -24,13 +24,13 @@ const Portfolio = () => {
   const [filteredValue, setFilteredValue] = useState(1);
   const [hoveredValue, setHoveredValue] = useState(null);
 
-  function handleFilter(currentId) {
+  const handleFilter = (currentId) => {
     setFilteredValue(currentId);
-  }
+  };
 
-  function handleHover(index) {
+  const handleHover = (index) => {
     setHoveredValue(index);
-  }
+  };
 
   const filteredItems =
     filteredValue === 1
