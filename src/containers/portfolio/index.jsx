@@ -9,7 +9,8 @@ const portfolioData = [
     id: 1,
     name: "Personal Portfolio Website",
     image: process.env.PUBLIC_URL + "/images/image1.jpg", // public folder path
-    link: "https://anjalidevireddy.github.io/",
+ link: "https://github.com/AnjalideviReddy/Personal-Portfolio-Website/tree/main/src",
+
     category: 1,
   },
   // more projects...
