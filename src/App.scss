@@ -1,0 +1,26 @@
+/* App.scss */
+
+.App {
+  height: 100vh;           // Full screen height
+  width: 100vw;            // Full screen width
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.App__main-page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+/* Optional: if you want Navbar fixed */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}

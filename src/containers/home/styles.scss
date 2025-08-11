@@ -1,0 +1,113 @@
+.home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      color: var(--yellow-theme-main-color);
+      margin: 0;
+      font-weight: 500;
+      font-size: 8rem;
+      line-height: 10rem;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typingEffectAnimation 2.5s steps(30, end);
+
+      @media (max-width: 550px) {
+        font-size: 3rem;
+        line-height: 4rem;
+        white-space: normal;
+        overflow: visible;
+        animation: fadeInText 1s ease-out; // replace typing with fade on mobile
+      }
+
+      @media (min-width: 551px) and (max-width: 768px) {
+        font-size: 5rem;
+        line-height: 6rem;
+        white-space: normal;
+      }
+
+      @media (min-width: 769px) and (max-width: 990px) {
+        font-size: 6rem;
+        line-height: 8rem;
+        white-space: normal;
+      }
+    }
+  }
+
+  &__contact__me {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    animation: slideUpFadeIn 1s ease-out 2s forwards;
+    opacity: 0;
+
+    button {
+      padding: 10px 70px;
+      font-size: 2rem;
+      background: transparent;
+      color: var(--yellow-theme-main-color);
+      border: 1.5px solid var(--yellow-theme-main-color);
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--yellow-theme-main-color);
+        color: black;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 550px) {
+        font-size: 1.4rem;
+        padding: 8px 30px;
+      }
+    }
+  }
+}
+
+// Typing animation for h1
+@keyframes typingEffectAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+// Slide-up animation only for button
+@keyframes slideUpFadeIn {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Simple fade-in for mobile h1
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
